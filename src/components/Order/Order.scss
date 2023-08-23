@@ -1,0 +1,235 @@
+@import "../../css-config/mixins.scss";
+@import "../../css-config/colors.scss";
+
+.order {
+  padding: 50px 0;
+  &-title {
+    margin-bottom: 50px;
+    font-size: 32px;
+    font-weight: 700;
+  }
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    &__name {
+      margin-bottom: 50px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .cart-wrapper__total {
+      position: sticky;
+      top: 100px;
+      bottom: 30px;
+      background: $grey3;
+      height: 250px;
+      width: 400px;
+      padding: 30px 35px;
+      border-radius: 15px;
+      .price-title {
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .title {
+      }
+      .price {
+      }
+      ul {
+        li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+      }
+      .cart-total__btn {
+        width: 100%;
+        background: $orange1;
+        padding: 20px 12px;
+        display: flex;
+        justify-content: center;
+        &:hover {
+          background: $orange2;
+        }
+      }
+    }
+  }
+  &-block {
+    // width: 500px;
+    margin-bottom: 50px;
+    &_item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
+      label {
+        margin-right: 50px;
+      }
+      .order-item__input {
+        width: 450px;
+        input {
+          padding: 15px 20px;
+          border: 1px solid #dadada;
+          border-radius: 1px;
+          background: 0 0;
+          display: block;
+          border-radius: 10px;
+          width: 100%;
+          -webkit-transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+          -o-transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+          transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+          font-weight: 300;
+        }
+        textarea {
+          padding: 15px 20px;
+          border: 1px solid #dadada;
+          border-radius: 1px;
+          background: 0 0;
+          display: block;
+          border-radius: 10px;
+          width: 100%;
+          -webkit-transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+          -o-transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+          transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+          font-weight: 300;
+        }
+      }
+    }
+  }
+  .address-block_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+    &-dope {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      #code {
+        width: 250px;
+      }
+    }
+  }
+  .address-block_item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    input {
+      padding: 15px 20px;
+      border: 1px solid #dadada;
+      border-radius: 1px;
+      background: 0 0;
+      display: block;
+      border-radius: 10px;
+      width: 80px;
+      -webkit-transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      -o-transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      font-weight: 300;
+    }
+    #street {
+      width: 250px;
+    }
+    #house,
+    #apartment,
+    #entrance,
+    #building {
+      width: 100px;
+    }
+  }
+  &-inputs {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-bottom: 50px;
+    .item {
+      position: relative;
+      input[type="radio"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        z-index: -1;
+      }
+      label {
+        background: $orange1;
+        border-radius: 25px;
+        color: $black1;
+        padding: 15px 20px;
+        font-weight: 700 !important;
+        padding-left: 50px !important;
+        cursor: pointer;
+        -webkit-transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        -o-transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        background: #fff;
+        -webkit-box-shadow: 0 1px 9px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 9px rgba(0, 0, 0, 0.1);
+        font-weight: 300;
+        &:before {
+          top: 50%;
+          left: 20px;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          border-color: #fff;
+        }
+      }
+    }
+  }
+  .address-pickup {
+    margin-top: 50px;
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #dadada;
+      padding: 15px 20px;
+      background: 0 0;
+      border-radius: 10px;
+      width: 280px;
+      transition: 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      font-weight: 300;
+    }
+  }
+}
+
+.order-inputs .item input[type="radio"]:checked + label {
+  background: $orange1;
+  border-radius: 25px;
+  color: #fff;
+  padding: 15px 20px;
+  font-weight: 700;
+}
+
+.order-inputs .item input[type="radio"]:checked + label:before {
+  border: 1px solid $white1;
+}
+
+.order-inputs .item input[type="radio"]:checked + label:after {
+  width: 6px;
+  height: 6px;
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 25px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.order-inputs .item label:before {
+  border-radius: 50%;
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 1px solid $grey2;
+  position: absolute;
+  left: 19px;
+  top: 11px;
+  cursor: pointer;
+}

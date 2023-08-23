@@ -1,0 +1,127 @@
+@import "../../../css-config/mixins.scss";
+@import "../../../css-config//colors.scss";
+
+.fav-cart {
+  position: relative;
+  width: 275px;
+  height: 400px;
+  cursor: pointer;
+  &:hover {
+    .cart-image {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .cart-image {
+    margin-bottom: 5px;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 275px;
+    img {
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+  }
+  .cart-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .fav-cart__title {
+    margin-bottom: 10px;
+    font-size: 17px;
+    text-align: left;
+    height: 50px;
+    font-weight: 600 !important;
+  }
+  .cart-price {
+    display: flex;
+    align-items: center;
+    &__main {
+      margin-right: 10px;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    &__old {
+      font-weight: 500;
+      font-size: 14px;
+      color: $grey2;
+      position: relative;
+      &:before {
+        content: "";
+        border-bottom: 2px solid $grey2;
+        position: absolute;
+        width: 90%;
+        top: 10px;
+        // transform: rotate(160deg);
+      }
+    }
+  }
+  .cart-btn {
+    border: 1px solid $orange1;
+    color: $orange1;
+    background: transparent;
+    &:hover {
+      background: $orange1;
+      color: $white1;
+    }
+  }
+  &__discount {
+    position: absolute;
+    background: $green1;
+    border-radius: 16px 6px 16px 6px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 26px;
+    width: 55px;
+    color: #ffffff;
+    top: 15px;
+    left: 15px;
+  }
+  &__fav {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $orange1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    svg {
+      path {
+        stroke: $white1;
+        fill: $white1;
+      }
+    }
+    &:hover {
+      box-shadow: 0 0 0 11px rgb(255 105 0 / 37%);
+      .fav-title {
+        opacity: 1;
+      }
+    }
+    .fav-title {
+      text-align: center;
+      position: absolute;
+      font-size: 13px;
+      width: 180px;
+      background: $green1;
+      padding: 8px;
+      border-radius: 15px;
+      top: 50px;
+      color: $white1;
+      font-weight: 700;
+      left: -120px;
+      z-index: 5;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

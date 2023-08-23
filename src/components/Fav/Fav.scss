@@ -1,0 +1,67 @@
+@import "../../css-config/mixins.scss";
+@import "../../css-config/colors.scss";
+
+.favourites {
+  padding: 50px 0;
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  &-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &_title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    &_img {
+      margin: 15px 0px;
+      img {
+        width: 300px;
+      }
+    }
+    &_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        font-weight: 600;
+        width: 600px;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+    }
+    &_btn {
+      background: $green1;
+      a {
+        color: $white1;
+      }
+      &:hover {
+        background: $green2;
+      }
+    }
+  }
+  &-title {
+    margin-bottom: 50px;
+    font-size: 32px;
+    font-weight: 700;
+  }
+  &-products__block {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // flex-wrap: wrap;
+    // gap: 30px;
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    row-gap: 30px;
+  }
+}

@@ -1,0 +1,102 @@
+@import "../../../css-config/mixins.scss";
+@import "../../../css-config/colors.scss";
+
+.banner {
+  margin-top: 20px;
+  width: 100%;
+  margin-bottom: 50px;
+  &-wrapper {
+    height: 350px;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.swiper-container {
+  position: relative;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: $orange1 !important;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: $orange1;
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: $orange1;
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background: $white1;
+  box-shadow: 0px 51px 74px rgb(74 99 117 / 7%),
+    0px 11.3915px 16.5289px rgb(74 99 117 / 4%),
+    0px 3.39155px 4.92108px rgb(74 99 117 / 3%);
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 100% !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  margin: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 25px !important;
+  color: $black1;
+}
+
+.swiper-pagination-bullet-active {
+  background: $orange1 !important;
+}

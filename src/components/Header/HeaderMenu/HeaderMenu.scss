@@ -1,0 +1,230 @@
+@import "../../../css-config/mixins.scss";
+@import "../../../css-config/colors.scss";
+
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
+  transition: $property $duration $ease;
+}
+
+.header-fixed {
+  width: 100%;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.75);
+  &.scrolled-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    box-shadow: rgba(6, 5, 50, 0.1) 0px 4px 30px;
+    animation: stickyHeaderAnimation 0.3s ease forwards;
+    z-index: 99;
+    .menu-nav__logo {
+      width: 52px;
+      padding-right: 16px;
+      svg {
+        transform: translateX(0px) !important;
+      }
+    }
+  }
+  .fixed-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .content-left {
+      display: flex;
+      align-items: center;
+      .menu-nav__logo {
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        font-size: 0px;
+        line-height: 0;
+        position: relative;
+        // width: 52px;
+        // padding-right: 16px;
+        height: 36px;
+        svg {
+          transform: translateX(-52px);
+          transition: transform 0.25s ease 0s;
+          fill: $white1;
+        }
+      }
+    }
+    .content-menu {
+      display: flex;
+      align-items: center;
+      &__item {
+        list-style-type: none;
+        padding: 22px 8px;
+        &:hover {
+          .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        a {
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+          color: black;
+          font-size: 14px;
+          text-decoration: none;
+          line-height: 1;
+          transition: color 0.25s ease 0s, padding 0.25s ease 0s;
+          svg {
+            transition: all 0.25s ease-in-out;
+          }
+          &:hover {
+            color: $orange1;
+            svg {
+              transform: rotate(180deg);
+              path {
+                fill: $orange1;
+              }
+            }
+          }
+        }
+      }
+      .dropdown {
+        &-menu {
+          opacity: 0;
+          visibility: hidden;
+          position: absolute;
+          -webkit-transition: all 0.2s linear;
+          -o-transition: all 0.2s linear;
+          transition: all 0.2s linear;
+          z-index: 10;
+          padding-top: 12px;
+          &__list {
+            background: #ffffff;
+            -webkit-box-shadow: 0 0 4px rgb(0 0 0 / 12%);
+            box-shadow: 0 0 4px rgb(0 0 0 / 12%);
+            border-radius: 12px;
+            padding: 20px;
+            list-style: none;
+            .menu-list__block {
+              display: flex;
+              justify-content: space-between;
+              width: 580px;
+              &--shirt {
+                width: 220px;
+                display: flex;
+                justify-content: space-between;
+              }
+              .menu-list__item {
+                p {
+                  font-weight: 600;
+                  color: $green1;
+                  margin-bottom: 8px;
+                }
+              }
+            }
+            li {
+              margin-bottom: 8px;
+              &:last-child {
+                margin-bottom: 0;
+              }
+              a {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 22px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .fixed-cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    &__like {
+      margin-right: 25px;
+      background: $orange1;
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      .like-count {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: $orange1;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        color: $white1;
+      }
+      svg {
+        path {
+          stroke: $white1;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            fill: $white1;
+          }
+        }
+      }
+    }
+    .fixed-cart__btn {
+      background: $orange1;
+      color: $white1;
+      padding: 12px 20px;
+      font-size: 16px;
+      line-height: 24px;
+      display: flex;
+      border-radius: 30px;
+      border: none;
+      align-items: center;
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+      cursor: pointer;
+      .btn-line {
+        height: 24px;
+        width: 1px;
+        margin: 0px 12px;
+        background: rgb(255, 255, 255);
+        opacity: 0.4;
+      }
+      svg {
+        display: none;
+      }
+      .btn-quantity {
+        width: 15px;
+      }
+      &:hover {
+        background-color: $orange2;
+        color: $white1;
+        svg {
+          display: block;
+          width: 15px;
+        }
+        .btn-quantity {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes stickyHeaderAnimation {
+  0% {
+    transform: translateY(-80px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../../css-config/colors.scss";
+@import "../../../css-config/mixins.scss";
+
+.filter {
+  padding: 50px 0;
+  &-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+  &-wrapper {
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    row-gap: 30px;
+  }
+}

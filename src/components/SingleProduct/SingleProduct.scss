@@ -1,0 +1,111 @@
+@import "../../css-config/mixins.scss";
+@import "../../css-config/colors.scss";
+
+.product {
+  padding: 50px 0;
+  flex: 1 auto;
+  &-wrapper {
+    position: relative;
+    &_item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+  }
+  &-image {
+    margin-right: 50px;
+    // position: relative;
+    position: sticky;
+    top: 0px;
+    bottom: 50px;
+    img {
+      width: 460px;
+      height: 460px;
+      border-radius: 20px;
+    }
+    &__discout {
+      position: absolute;
+      top: 20px;
+      left: 100px;
+      background: $green1;
+      border-radius: 16px 6px 16px 6px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 26px;
+      width: 55px;
+      color: #ffffff;
+    }
+  }
+  &-text {
+    display: flex;
+    flex-direction: column;
+    &__title {
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    &__description {
+      font-size: 16px;
+      span {
+        display: block;
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+    &__price {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      gap: 12px;
+      .new {
+        font-weight: 700;
+        font-size: 22px;
+      }
+      .old {
+        color: #94959b;
+        position: relative;
+        font-size: 15px;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background: #94959b;
+          top: 11px;
+        }
+      }
+    }
+    .product-btn__contorls {
+      margin-bottom: 20px;
+      .controls-btn {
+        background: $orange1;
+        padding: 15px 22px;
+        &:hover {
+          background: $orange2;
+        }
+      }
+    }
+  }
+}
+
+.fixed-cart__add {
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  border-radius: 10px;
+  background: #373535;
+  color: #fbfbfb;
+  font-weight: 500;
+  padding: 15px 15px;
+  top: -40px;
+  right: 0px;
+  animation: stickyHeaderAnimation 0.4s ease forwards;
+  opacity: 0;
+  // z-index: -150;
+  &.show {
+    opacity: 1;
+  }
+}

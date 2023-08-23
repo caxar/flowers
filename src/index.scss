@@ -1,0 +1,50 @@
+@import "../src/assets/fonts/font.scss";
+@import "../src/css-config/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 22px;
+  color: $black1;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  width: 1250px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: $black1;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  display: flex;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #e86100;
+  }
+}
+
+// .swiper-slide {
+//   margin-right: 0px !;
+// }

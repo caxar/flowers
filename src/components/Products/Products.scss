@@ -1,0 +1,59 @@
+@import "../../css-config/mixins.scss";
+@import "../../css-config/colors.scss";
+
+.products {
+  margin: 80px 0;
+  &-title {
+    margin-bottom: 25px;
+  }
+  &-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .swiper {
+      .swiper-button-prev {
+        left: 15px;
+      }
+      .swiper-button-next {
+        right: 30px;
+      }
+      .swiper-wrapper {
+        margin-bottom: 25px;
+      }
+      .swiper-scrollbar {
+        opacity: 1 !important;
+      }
+      .swiper-horizontal > .swiper-scrollbar,
+      .swiper-scrollbar.swiper-scrollbar-horizontal {
+        height: 3px !important;
+      }
+      .swiper-scrollbar-drag {
+        background: $grey4 !important;
+      }
+    }
+  }
+  &-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    a {
+      color: $black1;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      svg {
+        margin-left: 3px;
+        transition: all 0.3s ease-in-out;
+        path {
+          stroke: $black1;
+        }
+      }
+      &:hover {
+        svg {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+}

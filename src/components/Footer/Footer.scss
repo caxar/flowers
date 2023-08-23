@@ -1,0 +1,133 @@
+@import "../../css-config/mixins.scss";
+@import "../../css-config/colors.scss";
+
+.footer {
+  height: 380px;
+  background: #364156;
+  padding: 50px 0;
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  &-left {
+    &__logo {
+      width: 120px;
+      //   margin-bottom: 20px;
+      img {
+        width: 100%;
+      }
+    }
+    &__contacts {
+      .contacts-item {
+        margin-right: 15px;
+      }
+    }
+    &__info {
+      margin-bottom: 35px;
+      p {
+        font-size: 16px;
+        font-weight: 600;
+        color: $white1;
+        margin-bottom: 16px;
+      }
+      ul {
+        li {
+          list-style-type: none;
+          a {
+            text-decoration: none;
+            color: $white1;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              color: $orange1;
+            }
+          }
+        }
+      }
+      &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .info-item {
+        display: flex;
+        color: $white1;
+        margin-bottom: 15px;
+        align-items: center;
+        svg {
+          margin-right: 8px;
+        }
+        p {
+          color: $grey4;
+        }
+        a {
+          display: block;
+          text-decoration: none;
+          color: $white1;
+          font-size: 17px;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: $orange1;
+          }
+        }
+      }
+    }
+  }
+  &-right {
+    display: flex;
+    justify-content: space-between;
+    &__menu {
+      .right-title {
+        color: $grey4;
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      .right-list {
+        &__item {
+          margin-bottom: 10px;
+          list-style-type: none;
+          a {
+            text-decoration: none;
+            color: $white1;
+            transition: all 0.3s ease-in-out;
+          }
+          &:hover {
+            a {
+              color: $orange1;
+            }
+          }
+        }
+      }
+    }
+    &__contacts {
+      .right-info {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        a {
+          color: $white1;
+          text-decoration: none;
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 10px;
+          transition: all 0.3s ease;
+          &:hover {
+            color: $orange1;
+          }
+        }
+      }
+      .right-title {
+        color: $grey4;
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      .right-phone {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

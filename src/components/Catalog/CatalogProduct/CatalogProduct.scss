@@ -1,0 +1,69 @@
+@import "../../../css-config/mixins.scss";
+@import "../../../css-config//colors.scss";
+
+.catalog-product {
+  padding: 50px 0;
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+  &__wrapper {
+    margin-bottom: 50px;
+  }
+  &__block {
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    row-gap: 30px;
+  }
+  .catalog-description {
+    .description-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .description-text {
+      line-height: 22px;
+    }
+  }
+}
+
+.pagination-wrapper {
+  position: relative;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination {
+  // rounded py-2 px-4 bg-black text-white disabled:bg-gray-200 disabled:text-gray-500
+  padding: 9px;
+  background: $orange1;
+  svg {
+    path {
+      stroke: $white1;
+    }
+  }
+  border-radius: none !important;
+  &:disabled {
+    background: $grey1;
+    color: $grey2;
+  }
+}
+.pagination-reload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $white1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}

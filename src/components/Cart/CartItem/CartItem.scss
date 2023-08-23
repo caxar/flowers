@@ -1,0 +1,115 @@
+@import "../../../css-config/mixins.scss";
+@import "../../../css-config/colors.scss";
+
+.cart-item {
+  margin-bottom: 40px;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .cart-list_image {
+      width: 120px;
+      height: 120px;
+      margin-right: 20px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .cart-item__block {
+      display: flex;
+      align-items: center;
+      margin-right: 60px;
+    }
+    .cart-list_name {
+      width: 340px;
+      a {
+        font-weight: 600;
+      }
+      .cart-list_del {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        svg {
+          margin-right: 8px;
+          path {
+            transition: all 0.2s ease-in-out;
+          }
+        }
+        &:hover {
+          color: $orange1;
+          svg {
+            path {
+              fill: $orange1 !important;
+            }
+          }
+        }
+      }
+    }
+    .cart-list_price {
+      text-align: right;
+      .cart-list_block {
+        margin-bottom: 15px;
+      }
+      .new {
+        font-weight: 600;
+        font-size: 20px;
+      }
+      .old {
+        // font-weight: 500;
+        color: $grey2;
+        position: relative;
+        font-size: 14px;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 40%;
+          height: 1px;
+          background: $grey2;
+          top: 11px;
+        }
+      }
+    }
+    .cart-list_count {
+      max-width: 115px;
+      padding: 12px 10px;
+      display: flex;
+      justify-content: space-between;
+      background: $grey3;
+      border-radius: 6px;
+      input[type="text"] {
+        width: 50px;
+        background: transparent;
+        border: none !important;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: left;
+        padding: 0;
+        text-align: center;
+        margin: 0px 5px;
+      }
+      .count-plus {
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .count-minus {
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.disabled {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
